@@ -1,0 +1,73 @@
+Term,Description,Additional info
+STUDYID,Study Identifier,Req AE.STUDYID
+USUBJID,Unique Subject Identifier,Req AE.USUBJID
+SUBJID,Subject Identifier for the Study,ADSL.SUBJID
+SITEID,Study Site Identifier,ADSL.SITEID
+AE,Adverse Event,
+AESEQ,Sequence Number,"Req ""AE.AESEQRequired for traceability back to SDTM AE."""
+AETERM,Reported Term for the Adverse Event,Req AE.AETERM
+AEDECOD,Dictionary-Derived Term,"MedDRA Req ""AE.AEDECODThis is typically one of the primary variables used in an AE analysis and would be brought in from the SDTM AE domain. Equivalent to the Preferred Term (PT in MedDRA). As mentioned above, all other SDTM AE and SUPPAE domain variables needed for analysis or traceability should also be included. Include the dictionary version in the variable metadata."""
+AEBODSYS,Body System or Organ Class,"MedDRA Req ""AE.AEBODSYS This is typically one of the primary variables used by the Sponsor in an AE analysis and would be brought in from the SDTM AE domain. As mentioned above, all other SDTM AE and SUPPAE domain variables needed for analysis or traceability should also be included. Include the dictionary version in the variable metadata."""
+AEBDSYCD,Body System or Organ Class Code,"""AE.AEBDSYCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AELLT,Lowest Level Term,"MedDRA Cond ""AE.AELLT This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata. Conditional on whether used for analysis."""
+AELLTCD,Lowest Level Term Code,"""AE.AELLTCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AEPTCD,Preferred Term Code,"""AE.AEPTCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AEHLT,High Level Term,"MedDRA Cond ""AE.AEHLT This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata. Conditional on whether used for analysis."""
+AEHLTCD,High Level Term Code,"""AE.AEHLTCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AEHLGT,High Level Group Term,"MedDRA Cond ""AE.AEHLGT This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata. Conditional on whether used for analysis."""
+AEHLTGCD,High Level Group Term Code,"""AE.AEHLGTCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AESOC,Primary System Organ Class,"MedDRA Cond ""AE.AESOC This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata. Conditional on whether a secondary SOC was used for the primary analysis. See Amendment 1 to SDTM [3]."""
+AESOCCD,Primary System Organ Class Code,"""AE.AESOCCD This would be copied from the SDTM AE domain or supplemental qualifier dataset. Include the dictionary version in the variable metadata."""
+AESTDTC,Start Date/Time of Adverse Event,Copied from AE.AESTDTC
+ASTDT,Analysis Start Date,"Cond ""Created from converting AE.AESTDTC from character ISO8601 format to numeric date format, applying imputation rules as specified in the SAP or metadata. Conditional on whether start date is pertinent for study and AE.AESTDTC is populated in SDTM."""
+ASTDTM,Analysis Start Date/Time,"Cond ""Created from converting AE.AESTDTC from character ISO8601 format to numeric date-time format, applying imputation rules as specified in the SAP or metadata. Conditional on whether start date-time is pertinent for study and AE.AESTDTC with time is populated in SDTM."""
+ASTDTF,Analysis Start Date Imputation Flag,"(DATEFL) Cond ""Created during conversion of AE.AESTDTC from character to numeric. Imputation flags are described in the ADaMIG V1.0 [2] General Timing Variable Convention #6. Conditional on whether any imputation is done for the start date. """
+ASTTMF,Analysis Start Time Imputation Flag,"(TIMEFL) Cond ""Created during conversion of AE.AESTDTC from character to numeric. Imputation flags are described in the ADaMIG V1.0 [2] General Timing Variable Convention #6. Conditional on whether any imputation is done for the start time."""
+AEENDTC,End Date/Time of Adverse Event,Copied from AE.AEENDTC
+AENDT,Analysis End Date,"Cond ""Created from converting AE.AEENDTC from character ISO8601 format to numeric date format, applying imputation rules as specified in the SAP or metadata. Conditional on whether end date is pertinent for study and AE.AEENDTC is populated in SDTM."""
+AENDTM,Analysis End Date/Time,"Cond ""Created from converting AE.AEENDTC from character ISO8601 format to numeric date-time format, applying imputation rules as specified in the SAP or metadata. Conditional on whether end date-time is pertinent for study and AE.AEENDTC with time is populated in SDTM."""
+AENDTF,Analysis End Date Imputation Flag,"(DATEFL) Cond ""Created during conversion of AE.AEENDTC from character to numeric. Imputation flags are described in the ADaMIG V1.0 [2] General Timing Variable Convention #6. Conditional on whether any imputation is done for the end date."""
+AENTMF,Analysis End Time Imputation Flag,"(TIMEFL) Cond ""Created during conversion of AE.AEENDTC from character to numeric. Imputation flags are described in the ADaMIG V1.0 [2] General Timing Variable Convention #6. Conditional on whether any imputation is done for the end time."""
+ASTDY,Analysis Start Relative Day,"Cond ""Example derivation: ASTDT - ADSL.TRTSDT + 1 if ASTDT ≥ TRTSDT, else ASTDT - ADSL.TRTSDT if ASTDT < TRTSDT This variable may instead be copied from AESTDY. Conditional on whether analysis start relative day is pertinent to the study. """
+AESTDY,Study Day of Start of Adverse Event,"""AE.AESTDY ASTDY may differ from AESTDY due to date imputation and the option in ADaM to use a reference date other than SDTM's RFSTDTC. Including AE.AESTDY in addition to ASTDY adds traceability."""
+AENDY,Analysis End Relative Day,"""Example derivation: AENDT - ADSL.TRTSDT + 1 if AENDT ≥ TRTSDT, else AENDT - ADSL.TRTSDT if AENDT < TRTSDT This variable may instead be copied from AEENDY."""
+AEENDY,Study Day of End of Adverse Event,"""AE.AEENDY AENDY may differ from AEENDY due to date imputation and the option in ADaM to use a reference date other than SDTM's RFSTDTC. Including AE.AEENDY in addition to AENDY adds traceability."""
+ADURN,AE Duration (N),Derive from ASTDT (or ASTDTM) and AENDT (or AENDTM)
+ADURU,AE Duration Units,Cond Conditional on whether ADURN is included.
+AEDUR,Duration of Adverse Event,"""AE.AEDUR Because AEDUR is a collected field and ADURN is derived, the values will often differ. Including AEDUR in addition to ADURN can add traceability."""
+APERIOD,Period,The numeric value characterizing the period to which the record belongs.
+APERIODC,Period (C),Text characterizing to which period the record belongs. One-to-one map to APERIOD.
+APHASE,Phase,"""Example derivation: If ASTDT<ADSL.TRTSDT, then APHASE='RUN-IN' Else if ASTDT > ADSL.TRTEDT + x days then APHASE='FOLLOW-UP', Else APHASE='TREATMENT'. The number x is defined by the sponsor, should be consistent with the Treatment Emergent Analysis Flag (TRTEMFL) variable described below and often incorporates the known half-life of the drug."""
+TRTEMFL,Treatment Emergent Analysis Flag,"Cond ""Example derivation: If ADSL.TRTSDT≤ASTDT≤ADSL.TRTEDT + x days then TRTEMFL='Y' The number x is defined by the sponsor and often incorporates the known half-life of the drug. Variable TRTEMFL is to be used for any analysis of treatment-emergent AEs. This variable is conditional on whether the concept of treatment emergent is a key feature of the AE analyses. """
+AETRTEM,Treatment Emergent Flag,"""SUPPAE.QVAL where QNAM='AETRTEM'. See the SDTMIG version 3.1.2 [3] for more information. TRTEMFL may differ from AETRTEM due to different definitions, date imputation, and other analysis rules. Including AETRTEM in addition to TRTEMFL will add traceability."""
+ANLzzFL,Analysis Record Flag zz,"Cond ""The ANLzzFL flag is useful in many circumstances; an example is when there is more than one coding path included for analysis, in which case separate analysis flags could be used to denote primary coding path or the records used for analysis from each coding path. See the ADaMIG version 1 [2] for more information on this flag variable. This variable is conditional on whether analysis records flags are needed for analysis."""
+PREFL,Pre-treatment Flag,"Cond ""Example derivation: If ASTDT < ADSL.TRTSDT then PREFL='Y' This variable is conditional on whether the concept of pre-treatment AEs is a feature of the study and whether used for analysis."""
+FUPFL,Follow-up Flag,"Cond ""Example derivation: If ASTDT > ADSL.TRTEDT then FUPFL='Y' This variable is conditional on whether the concept of follow-up AEs is a feature of the study and whether used for analysis."""
+AOCCFL,1st Occurrence of Any AE Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for each subject.
+AOCCSFL,1st Occurrence of SOC Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for each body system for each subject.
+AOCCPFL,1st Occurrence of Preferred Term Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for each preferred term for each subject.
+AOCCIFL,1st Max Sev./Int. Occurrence Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for maximum severity for each subject.
+AOCCSIFL,1st Max Sev./Int. Occur Within SOC Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for maximum severity within body system for each subject.
+AOCCPIFL,1st Max Sev./Int. Occur Within PT Flag,Example derivation: Sort the data in the required order and flag the first treatment emergent record for maximum severity within preferred term for each subject.
+AOCCzzFL,1st Occurrence of ....,Additional flag variables as needed for analysis. Derivation rules for these flags need to be described in the metadata.
+DOSEAEON,Study Drug Dose at AE Onset,"""Study drug dose a subject took when adverse event occurred. Example derivation: Obtained from EX.EXDOSE where AESTDTC falls between the values of EX.EXSTDTC and EX.EXENDTC"""
+DOSAEONU,Study Drug Dose at AE Onset Units,Cond Conditional on whether DOSEAEON is included.
+DOSECUM,Cumulative Study Drug Dose,Cumulative study drug dose at the start of the AE.
+DOSECUMU,Cumulative Study Drug Dose Units,Cond Conditional on whether DOSECUM is included.
+AESER,Serious Event,(NY) Req AE.AESER
+AESEV,Severity/Intensity,AE.AESEV
+AESEVN,Severity/Intensity (N),"""Code AE.AESEV to numeric Low intensity should correspond to low value"""
+ASEV,Analysis Severity/Intensity,"Apply imputation rules for missing severity of adverse events as specified in the SAP or metadata. May change case of text, such as from all uppercase in AESEV to mixed case in ASEV."
+ASEVN,Analysis Severity/Intensity (N),"""Code ASEV to numeric Low intensity should correspond to low value"""
+SEVGRy,Pooled Severity Group,Pooled grouping of AE Severity for analysis (e.g. mild/moderate or severe).
+SEVGRyN,Pooled Severity Group,"""Code SEVGRy to numeric Low intensity should correspond to low value"""
+AEREL,Causality,AE.AEREL
+AERELN,Causality (N),"""Code AE.AEREL to numeric Low relation should correspond to low value"""
+AREL,Analysis Causality,"Apply imputation rules for missing causality of study drug as specified in the SAP or metadata. May change case of text, such as from all uppercase in AEREL to mixed case in AREL."
+ARELN,Analysis Causality (N),Code AREL to numeric
+RELGRy,Pooled Causality Group,"Pooled grouping of causality of study drug for analysis (e.g. related, Not related)."
+RELGRyN,Pooled Causality Group,"""Code of RELGRy to numeric Low intensity should correspond to low value"""
+AETOXGR,Standard Toxicity Grade,AE.AETOXGR
+AETOXGRN,Standard Toxicity Grade (N),"""Code AETOXGR to numeric Low toxicity should correspond to low value"""
+ATOXGR,Analysis Toxicity Grade,"Toxicity grade for analysis. May be based on AETOXGR or an imputed or assigned value. May change case of text, such as from all uppercase in AETOXGR to mixed case in ATOXGR."
+ATOXGRN,Analysis Toxicity Grade (N),Code ATOXGR to numeric
